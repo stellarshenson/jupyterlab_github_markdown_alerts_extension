@@ -96,9 +96,26 @@ function processAlerts(text: string): string {
   const lines = text.split('\n');
   const result: string[] = [];
   let i = 0;
+  let inCodeBlock = false;
 
   while (i < lines.length) {
     const line = lines[i];
+
+    // Track code blocks (both ``` and ~~~)
+    if (line.trim().match(/^```|^~~~/)) {
+      inCodeBlock = !inCodeBlock;
+      result.push(line);
+      i++;
+      continue;
+    }
+
+    // Skip alert processing inside code blocks
+    if (inCodeBlock) {
+      result.push(line);
+      i++;
+      continue;
+    }
+
     const alertMatch = line.match(
       /^>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*$/
     );
