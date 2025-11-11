@@ -40,6 +40,31 @@ Create alert blocks in markdown cells using GitHub's alert syntax. Start with a 
 
 Each alert type renders with distinct colors and icons matching GitHub's design. Multi-line content is supported by continuing the blockquote format.
 
+**Alert Examples**:
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
+## Settings
+
+The extension provides optional settings accessible through JupyterLab's Settings Editor:
+
+- **Show Alert Backgrounds** - Enable subtle colored backgrounds for alerts (disabled by default to match GitHub exactly)
+
+To access settings: Settings → Settings Editor → GitHub Markdown Alerts
+
 ## Install
 
 ```bash

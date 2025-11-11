@@ -1,12 +1,13 @@
 /*
  * GitHub-style markdown alerts
+ * Matches GitHub's exact styling from github.com
  */
 
 .markdown-alert {
   padding: 0.5rem 1rem;
-  margin-bottom: 16px;
-  border-left: 0.25rem solid;
-  border-radius: 6px;
+  margin-bottom: 1rem;
+  color: inherit;
+  border-left: 0.25em solid;
 }
 
 .markdown-alert > :first-child {
@@ -17,17 +18,35 @@
   margin-bottom: 0;
 }
 
-.markdown-alert-title {
+.markdown-alert .markdown-alert-title {
   display: flex;
+  font-weight: 500;
   align-items: center;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 .octicon {
   display: inline-block;
-  fill: currentColor;
   vertical-align: text-bottom;
+  flex-shrink: 0;
+}
+
+/* Show light theme icons by default, hide dark theme icons */
+.octicon-light {
+  display: inline-block;
+}
+
+.octicon-dark {
+  display: none;
+}
+
+/* In dark theme, show dark icons and hide light icons */
+body[data-jp-theme-light='false'] .octicon-light {
+  display: none;
+}
+
+body[data-jp-theme-light='false'] .octicon-dark {
+  display: inline-block;
 }
 
 .mr-2 {
@@ -37,7 +56,6 @@
 /* Note - Blue */
 .markdown-alert-note {
   border-left-color: #0969da;
-  background-color: rgba(9, 105, 218, 0.1);
 }
 
 .markdown-alert-note .markdown-alert-title {
@@ -47,7 +65,6 @@
 /* Tip - Green */
 .markdown-alert-tip {
   border-left-color: #1a7f37;
-  background-color: rgba(26, 127, 55, 0.1);
 }
 
 .markdown-alert-tip .markdown-alert-title {
@@ -57,17 +74,15 @@
 /* Important - Purple */
 .markdown-alert-important {
   border-left-color: #8250df;
-  background-color: rgba(130, 80, 223, 0.1);
 }
 
 .markdown-alert-important .markdown-alert-title {
   color: #8250df;
 }
 
-/* Warning - Yellow/Orange */
+/* Warning - Orange */
 .markdown-alert-warning {
   border-left-color: #9a6700;
-  background-color: rgba(154, 103, 0, 0.1);
 }
 
 .markdown-alert-warning .markdown-alert-title {
@@ -76,18 +91,16 @@
 
 /* Caution - Red */
 .markdown-alert-caution {
-  border-left-color: #d1242f;
-  background-color: rgba(209, 36, 47, 0.1);
+  border-left-color: #cf222e;
 }
 
 .markdown-alert-caution .markdown-alert-title {
-  color: #d1242f;
+  color: #cf222e;
 }
 
 /* Dark theme support */
 body[data-jp-theme-light='false'] .markdown-alert-note {
   border-left-color: #2f81f7;
-  background-color: rgba(47, 129, 247, 0.15);
 }
 
 body[data-jp-theme-light='false'] .markdown-alert-note .markdown-alert-title {
@@ -96,7 +109,6 @@ body[data-jp-theme-light='false'] .markdown-alert-note .markdown-alert-title {
 
 body[data-jp-theme-light='false'] .markdown-alert-tip {
   border-left-color: #3fb950;
-  background-color: rgba(63, 185, 80, 0.15);
 }
 
 body[data-jp-theme-light='false'] .markdown-alert-tip .markdown-alert-title {
@@ -105,7 +117,6 @@ body[data-jp-theme-light='false'] .markdown-alert-tip .markdown-alert-title {
 
 body[data-jp-theme-light='false'] .markdown-alert-important {
   border-left-color: #a371f7;
-  background-color: rgba(163, 113, 247, 0.15);
 }
 
 body[data-jp-theme-light='false']
@@ -116,7 +127,6 @@ body[data-jp-theme-light='false']
 
 body[data-jp-theme-light='false'] .markdown-alert-warning {
   border-left-color: #d29922;
-  background-color: rgba(210, 153, 34, 0.15);
 }
 
 body[data-jp-theme-light='false'] .markdown-alert-warning .markdown-alert-title {
@@ -125,9 +135,55 @@ body[data-jp-theme-light='false'] .markdown-alert-warning .markdown-alert-title 
 
 body[data-jp-theme-light='false'] .markdown-alert-caution {
   border-left-color: #f85149;
-  background-color: rgba(248, 81, 73, 0.15);
 }
 
 body[data-jp-theme-light='false'] .markdown-alert-caution .markdown-alert-title {
   color: #f85149;
+}
+
+/* Optional backgrounds (enabled via settings) */
+.markdown-alert-with-backgrounds.markdown-alert-note {
+  background-color: rgba(9, 105, 218, 0.1);
+}
+
+.markdown-alert-with-backgrounds.markdown-alert-tip {
+  background-color: rgba(26, 127, 55, 0.1);
+}
+
+.markdown-alert-with-backgrounds.markdown-alert-important {
+  background-color: rgba(130, 80, 223, 0.1);
+}
+
+.markdown-alert-with-backgrounds.markdown-alert-warning {
+  background-color: rgba(154, 103, 0, 0.1);
+}
+
+.markdown-alert-with-backgrounds.markdown-alert-caution {
+  background-color: rgba(209, 36, 47, 0.1);
+}
+
+/* Dark theme backgrounds */
+body[data-jp-theme-light='false']
+  .markdown-alert-with-backgrounds.markdown-alert-note {
+  background-color: rgba(47, 129, 247, 0.15);
+}
+
+body[data-jp-theme-light='false']
+  .markdown-alert-with-backgrounds.markdown-alert-tip {
+  background-color: rgba(63, 185, 80, 0.15);
+}
+
+body[data-jp-theme-light='false']
+  .markdown-alert-with-backgrounds.markdown-alert-important {
+  background-color: rgba(163, 113, 247, 0.15);
+}
+
+body[data-jp-theme-light='false']
+  .markdown-alert-with-backgrounds.markdown-alert-warning {
+  background-color: rgba(210, 153, 34, 0.15);
+}
+
+body[data-jp-theme-light='false']
+  .markdown-alert-with-backgrounds.markdown-alert-caution {
+  background-color: rgba(248, 81, 73, 0.15);
 }
