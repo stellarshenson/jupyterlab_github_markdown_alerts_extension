@@ -172,14 +172,12 @@ function postProcessAlerts(html: string, showBackgrounds: boolean): string {
         ? ' markdown-alert-with-backgrounds'
         : '';
 
-      const alertHtml =
+      return (
         `<div class="markdown-alert ${config.className}${backgroundClass}" dir="auto">` +
         `<p class="markdown-alert-title" dir="auto">${icon}${config.title}</p>` +
         content +
-        `</div>`;
-
-      console.log('Alert HTML generated:', alertHtml);
-      return alertHtml;
+        `</div>`
+      );
     }
   );
   return result;
@@ -229,12 +227,8 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     markdownParser.render = async (content: string): Promise<string> => {
       const processedContent = processAlerts(content);
-      console.log('Processed content:', processedContent);
       const renderedHtml = await originalRender(processedContent);
-      console.log('Rendered HTML:', renderedHtml);
-      const finalHtml = postProcessAlerts(renderedHtml, showBackgrounds);
-      console.log('Final HTML:', finalHtml);
-      return finalHtml;
+      return postProcessAlerts(renderedHtml, showBackgrounds);
     };
 
     console.log(
