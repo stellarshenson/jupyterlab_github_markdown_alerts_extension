@@ -2,7 +2,7 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
-## 1.0.5 (2025-11-11)
+## 1.0.9 (2025-11-11)
 
 ### Features
 

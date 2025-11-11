@@ -1,6 +1,6 @@
 # Release Notes
 
-## Release 1.0.5 (2025-11-11)
+## Release 1.0.9 (2025-11-11)
 
 This release delivers complete GitHub-style alert rendering for JupyterLab 4 with full theme support and optional customization.
 
