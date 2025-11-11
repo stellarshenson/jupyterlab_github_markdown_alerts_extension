@@ -21,7 +21,7 @@ This extension brings GitHub's alert syntax to JupyterLab, allowing you to creat
 
 Create alert blocks in markdown cells using GitHub's alert syntax. Start with a blockquote containing the alert type, followed by content lines:
 
-```markdown
+```
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
