@@ -212,8 +212,12 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     markdownParser.render = async (content: string): Promise<string> => {
       const processedContent = processAlerts(content);
+      console.log('Processed content:', processedContent);
       const renderedHtml = await originalRender(processedContent);
-      return postProcessAlerts(renderedHtml, showBackgrounds);
+      console.log('Rendered HTML:', renderedHtml);
+      const finalHtml = postProcessAlerts(renderedHtml, showBackgrounds);
+      console.log('Final HTML:', finalHtml);
+      return finalHtml;
     };
 
     console.log(
