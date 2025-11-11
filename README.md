@@ -10,6 +10,8 @@ A JupyterLab 4 extension that renders GitHub-style alert blocks in Markdown cell
 
 This extension brings GitHub's alert syntax to JupyterLab, allowing you to create styled callout blocks using simple markdown notation. Alerts automatically adapt to light and dark themes, matching GitHub's visual design.
 
+![Alert Examples Screenshot](.resources/screenshot.png)
+
 **Key Features**:
 - Five alert types - NOTE, TIP, IMPORTANT, WARNING, CAUTION
 - Automatic theme adaptation - colors adjust for light and dark modes
