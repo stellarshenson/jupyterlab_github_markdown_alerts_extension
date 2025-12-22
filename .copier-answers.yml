@@ -8,9 +8,9 @@ has_binder: false
 has_settings: false
 kind: frontend
 labextension_name: jupyterlab_github_markdown_alerts_extension
-project_short_description: Jupyterlab extension to render alerts tips like they are
-    rendered in github in markdown
+project_short_description:
+  Jupyterlab extension to render alerts tips like they are
+  rendered in github in markdown
 python_name: jupyterlab_github_markdown_alerts_extension
 repository: ''
 test: true
-

@@ -176,7 +176,7 @@ function postProcessAlerts(html: string, showBackgrounds: boolean): string {
         `<div class="markdown-alert ${config.className}${backgroundClass}" dir="auto">` +
         `<p class="markdown-alert-title" dir="auto">${icon}${config.title}</p>` +
         content +
-        `</div>`
+        '</div>'
       );
     }
   );

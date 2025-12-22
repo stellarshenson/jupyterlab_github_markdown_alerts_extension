@@ -13,6 +13,7 @@ This extension brings GitHub's alert syntax to JupyterLab, allowing you to creat
 ![Alert Examples Screenshot](.resources/screenshot.png)
 
 **Key Features**:
+
 - Five alert types - NOTE, TIP, IMPORTANT, WARNING, CAUTION
 - Automatic theme adaptation - colors adjust for light and dark modes
 - GitHub-compatible syntax - works with standard GitHub markdown alert notation

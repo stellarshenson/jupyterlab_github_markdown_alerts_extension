@@ -1,6 +1,6 @@
 {
     "name": "jupyterlab_github_markdown_alerts_extension",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "description": "Jupyterlab extension to render alerts tips like they are rendered in github in markdown",
     "keywords": [
         "jupyter",

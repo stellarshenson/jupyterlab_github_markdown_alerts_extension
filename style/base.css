@@ -155,7 +155,9 @@ body[data-jp-theme-light='false'] .markdown-alert-warning {
   border-left-color: #d29922;
 }
 
-body[data-jp-theme-light='false'] .markdown-alert-warning .markdown-alert-title {
+body[data-jp-theme-light='false']
+  .markdown-alert-warning
+  .markdown-alert-title {
   color: #d29922;
 }
 
@@ -163,7 +165,9 @@ body[data-jp-theme-light='false'] .markdown-alert-caution {
   border-left-color: #f85149;
 }
 
-body[data-jp-theme-light='false'] .markdown-alert-caution .markdown-alert-title {
+body[data-jp-theme-light='false']
+  .markdown-alert-caution
+  .markdown-alert-title {
   color: #f85149;
 }
 
