@@ -18,30 +18,29 @@
   margin-bottom: 0;
 }
 
-/* Tighten paragraph spacing inside alerts */
+/* Override JupyterLab's 1em margins for tighter alert content */
 .markdown-alert p {
-  margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-/* Tighten list spacing inside alerts */
 .markdown-alert ul,
 .markdown-alert ol {
-  margin-top: 0.5em;
   margin-bottom: 0.5em;
-  padding-left: 1.5em;
+}
+
+.markdown-alert ul ul,
+.markdown-alert ul ol,
+.markdown-alert ol ul,
+.markdown-alert ol ol {
+  margin-bottom: 0;
+}
+
+/* Remove paragraph margins inside list items */
+.markdown-alert li p {
+  margin-bottom: 0;
 }
 
 .markdown-alert li {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
-}
-
-.markdown-alert li:first-child {
-  margin-top: 0;
-}
-
-.markdown-alert li:last-child {
   margin-bottom: 0;
 }
 
