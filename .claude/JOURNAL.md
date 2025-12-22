@@ -42,3 +42,6 @@ This journal tracks substantive work on documents, diagrams, and documentation c
 
 13. **Task - Finalize release 1.0.9**: Updated documentation to match current package version and created release tag<br>
     **Result**: Updated RELEASE.md and CHANGELOG.md from version 1.0.5 to 1.0.9 to match package.json. Created and pushed RELEASE_1.0.9 tag to remote repository. All release documentation now synchronized with current version number.
+
+14. **Task - Fix bullet point spacing in alerts** (v1.0.11): Added CSS rules to tighten excessive spacing for paragraphs and lists inside alert blocks<br>
+    **Result**: Updated style/base.css with new rules targeting `.markdown-alert p` (0.5em margins), `.markdown-alert ul/ol` (0.5em margins, 1.5em left padding), and `.markdown-alert li` (0.25em margins with first/last child exceptions). JupyterLab's default markdown styling was causing excessively spread out bullet points - the new rules override these defaults to provide compact, readable alert content. Published to npm and PyPI as version 1.0.11.

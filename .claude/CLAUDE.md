@@ -58,4 +58,4 @@ This file extends workspace-level configuration with project-specific rules.
 - JavaScript: Bundled with Python package (labextension)
 - See RELEASE.md for release process
 
-**GitHub Repository**: TBD - needs repository URL configuration in package.json and pyproject.toml
+**GitHub Repository**: https://github.com/stellarshenson/jupyterlab_github_markdown_alerts_extension
