@@ -6,6 +6,9 @@
 [![Total PyPI downloads](https://static.pepy.tech/badge/jupyterlab-github-markdown-alerts-extension)](https://pepy.tech/project/jupyterlab-github-markdown-alerts-extension)
 [![JupyterLab 4](https://img.shields.io/badge/JupyterLab-4-orange.svg)](https://jupyterlab.readthedocs.io/en/stable/)
 
+> [!TIP]
+> This extension is part of the [stellars_jupyterlab_extensions](https://github.com/stellarshenson/stellars_jupyterlab_extensions) metapackage. Install all Stellars extensions at once: `pip install stellars_jupyterlab_extensions`
+
 A JupyterLab 4 extension that renders GitHub-style alert blocks in Markdown cells, providing visual emphasis for notes, tips, warnings, and other important information.
 
 This extension brings GitHub's alert syntax to JupyterLab, allowing you to create styled callout blocks using simple markdown notation. Alerts automatically adapt to light and dark themes, matching GitHub's visual design.
