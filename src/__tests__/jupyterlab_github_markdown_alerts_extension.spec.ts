@@ -60,7 +60,9 @@ describe('processAlerts', () => {
 > | Cell 1   | Cell 2   |`;
       const result = processAlerts(input);
       // Tables require consecutive lines - single newlines between rows
-      expect(result).toContain('| Header 1 | Header 2 |\n|----------|----------|\n| Cell 1   | Cell 2   |');
+      expect(result).toContain(
+        '| Header 1 | Header 2 |\n|----------|----------|\n| Cell 1   | Cell 2   |'
+      );
     });
 
     it('should not insert blank lines between table rows', () => {
@@ -94,7 +96,9 @@ describe('processAlerts', () => {
 >
 > Paragraph three.`;
       const result = processAlerts(input);
-      expect(result).toContain('Paragraph one.\n\nParagraph two.\n\nParagraph three.');
+      expect(result).toContain(
+        'Paragraph one.\n\nParagraph two.\n\nParagraph three.'
+      );
     });
   });
 
@@ -197,7 +201,8 @@ describe('postProcessAlerts', () => {
   });
 
   it('should add background class when showBackgrounds is true', () => {
-    const input = '<!--ALERT_START:WARNING-->Warning content<!--ALERT_END:WARNING-->';
+    const input =
+      '<!--ALERT_START:WARNING-->Warning content<!--ALERT_END:WARNING-->';
     const result = postProcessAlerts(input, true);
     expect(result).toContain('markdown-alert-with-backgrounds');
   });

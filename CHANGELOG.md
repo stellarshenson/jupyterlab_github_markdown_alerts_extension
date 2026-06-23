@@ -2,6 +2,17 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 1.0.21 (2026-06-23)
+
+### Maintenance
+
+- Hardened the Markdown render wrapper: alert transforms now run inside a try/catch that falls back to the original render output, so a transform edge case degrades to plain Markdown instead of rejecting the render
+- Added an idempotency guard so re-activating the extension cannot double-wrap the shared Markdown parser
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
+<!-- <START NEW CHANGELOG ENTRY> -->
+
 ## 1.0.9 (2025-11-11)
 
 ### Features

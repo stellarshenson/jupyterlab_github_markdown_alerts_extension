@@ -52,13 +52,29 @@ const plugin: JupyterFrontEndPlugin<void> = {
       loadSettings();
     }
 
-    const originalRender = markdownParser.render.bind(markdownParser);
+    // Idempotent: never re-wrap on re-activation, otherwise originalRender
+    // would capture an already-wrapped function
+    if (!(markdownParser.render as any).__alertsWrapped) {
+      const originalRender = markdownParser.render.bind(markdownParser);
 
-    markdownParser.render = async (content: string): Promise<string> => {
-      const processedContent = processAlerts(content);
-      const renderedHtml = await originalRender(processedContent);
-      return postProcessAlerts(renderedHtml, showBackgrounds);
-    };
+      const wrappedRender = async (content: string): Promise<string> => {
+        try {
+          const processedContent = processAlerts(content);
+          const renderedHtml = await originalRender(processedContent);
+          return postProcessAlerts(renderedHtml, showBackgrounds);
+        } catch (reason) {
+          // Degrade to plain Markdown instead of rejecting render, which
+          // would push rendermime into an un-highlighted fallback
+          console.error(
+            'jupyterlab_github_markdown_alerts_extension: render failed, falling back to plain markdown',
+            reason
+          );
+          return originalRender(content);
+        }
+      };
+      (wrappedRender as any).__alertsWrapped = true;
+      markdownParser.render = wrappedRender;
+    }
 
     console.log(
       'JupyterLab extension jupyterlab_github_markdown_alerts_extension is activated!'
