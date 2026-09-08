@@ -131,3 +131,6 @@ dmypy.json
 # Test and run artefacts
 junit.xml
 logs/
+
+# scratch directory of the agent tooling
+tmp/
