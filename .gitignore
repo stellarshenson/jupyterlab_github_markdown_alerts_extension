@@ -127,3 +127,7 @@ dmypy.json
 
 # Yarn cache
 .yarn/
+
+# Test and run artefacts
+junit.xml
+logs/
