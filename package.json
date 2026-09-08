@@ -1,6 +1,6 @@
 {
     "name": "jupyterlab_github_markdown_alerts_extension",
-    "version": "1.0.21",
+    "version": "1.0.24",
     "description": "Jupyterlab extension to render alerts tips like they are rendered in github in markdown",
     "keywords": [
         "jupyter",
@@ -56,13 +56,13 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
-        "@jupyterlab/application": "^4.0.0",
-        "@jupyterlab/rendermime": "^4.0.0",
+        "@jupyterlab/application": "^4.6.3",
+        "@jupyterlab/rendermime": "^4.6.3",
         "@jupyterlab/settingregistry": "^4.0.0"
     },
     "devDependencies": {
         "@jupyterlab/builder": "^4.0.0",
-        "@jupyterlab/testutils": "^4.0.0",
+        "@jupyterlab/testutils": "^4.6.3",
         "@types/jest": "^29.2.0",
         "@types/json-schema": "^7.0.11",
         "@types/react": "^18.0.26",
@@ -193,5 +193,8 @@
             "selector-no-vendor-prefix": null,
             "value-no-vendor-prefix": null
         }
+    },
+    "allowScripts": {
+        "@fortawesome/fontawesome-free": true
     }
 }
