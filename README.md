@@ -72,7 +72,7 @@ Each alert type renders with distinct colors and icons matching GitHub's design.
 
 The extension provides optional settings accessible through JupyterLab's Settings Editor:
 
-- **Show Alert Backgrounds** - Enable subtle colored backgrounds for alerts (disabled by default to match GitHub exactly)
+- **Show Alert Backgrounds** - Subtle colored backgrounds for alerts (on by default; turn off to match GitHub exactly)
 
 To access settings: Settings → Settings Editor → GitHub Markdown Alerts
 

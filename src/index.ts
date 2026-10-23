@@ -27,7 +27,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     markdownParser: IMarkdownParser,
     settingRegistry: ISettingRegistry | null
   ) => {
-    let showBackgrounds = false;
+    let showBackgrounds = true;
 
     // Load settings
     if (settingRegistry) {

@@ -8,8 +8,8 @@
     "showBackgrounds": {
       "type": "boolean",
       "title": "Show Alert Backgrounds",
-      "description": "Add subtle colored backgrounds to alert blocks (off by default to match GitHub exactly)",
-      "default": false
+      "description": "Add subtle colored backgrounds to alert blocks (turn off to match GitHub exactly)",
+      "default": true
     }
   },
   "additionalProperties": false
