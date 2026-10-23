@@ -152,3 +152,15 @@ Behaviour that no automated test exercised
   - log: 2026-10-23T07:58:15Z @kj added
   - log: 2026-10-23T07:58:15Z @kj closed: fixed: Galata settings folder test
 
+## Context menus `MENU`
+
+Right-click menus in JupyterLab
+
+- [-] `DEF-MENU-18-IFRAME` **Context menu stays open after a click into an iframe** - MEDIUM; a right-click menu stays open when the next click lands inside an iframe, such as the HTML viewer; Escape then fails too, because focus is inside the iframe; every other click target closes it; cause: Lumino Menu, JupyterLab core; fix: none in this extension
+  - repro: open an HTML file in the HTML viewer next to a notebook, right-click a cell, click inside the HTML viewer
+  - test-tags: MANUAL
+  - root-cause: 2026-10-23T08:54:06Z @kj a Lumino Menu closes only from a capture pointerdown listener on the top-level document (@lumino/widgets src/menu.ts lines 539 and 822-838); a press inside an iframe is delivered to the iframe's own document
+  - log: 2026-10-23T08:54:00Z @kj added
+  - log: 2026-10-23T08:54:06Z @kj root-cause updated "2026-10-23T08:54:00Z @kj a Lumino Menu closes only from a capture pointerdown listener on the top-level document (@lumino/widgets src/menu.ts lines 539 and 822-838); a press inside an iframe is delivered to the iframe own document" -> "a Lumino Menu closes only from a capture pointerdown listener on the top-level document (@lumino/widgets src/menu.ts lines 539 and 822-838); a press inside an iframe is delivered to the iframe's own document"
+  - log: 2026-10-23T08:54:06Z @kj rejected: JupyterLab core (Lumino Menu) issue, not in this extension; reproduces with every third-party extension disabled; a fix belongs upstream in Lumino or in the iframe-based viewer
+
