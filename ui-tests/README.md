@@ -127,6 +127,8 @@ cd ./ui-tests
 jlpm playwright codegen localhost:8888
 ```
 
+When another server already holds port 8888, run `JUPYTER_TEST_PORT=8889 jlpm start` and `jlpm playwright codegen localhost:8889`.
+
 ## Debug tests
 
 > All commands are assumed to be executed from the root directory
