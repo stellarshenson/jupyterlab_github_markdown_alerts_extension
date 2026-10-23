@@ -27,9 +27,12 @@ dependencies = [
 dynamic = ["version", "description", "authors", "urls", "keywords"]
 
 [project.optional-dependencies]
+test = [
+    "jupyterlab>=4.6,<5",  # the Galata test server imports jupyterlab.galata
+]
 dev = [
-    "jupyterlab>=4",
-    "jupyter-builder>=1.2.0",
+    "jupyterlab_github_markdown_alerts_extension[test]",
+    "jupyter-builder>=1.2,<2",
 ]
 
 [tool.hatch.version]

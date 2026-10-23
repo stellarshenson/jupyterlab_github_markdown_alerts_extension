@@ -3,12 +3,17 @@
  */
 const baseConfig = require('@jupyterlab/galata/lib/playwright-config');
 
+const PORT = process.env.JUPYTER_TEST_PORT || '8888';
+const BASE_URL = `http://localhost:${PORT}`;
+
 module.exports = {
   ...baseConfig,
+  use: { ...baseConfig.use, baseURL: BASE_URL },
   webServer: {
     command: 'jlpm start',
-    url: 'http://localhost:8888/lab',
+    url: `${BASE_URL}/lab`,
     timeout: 120 * 1000,
-    reuseExistingServer: !process.env.CI
+    // never attach to a developer's own lab on the same port
+    reuseExistingServer: false
   }
 };

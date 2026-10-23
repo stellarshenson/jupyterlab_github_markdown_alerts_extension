@@ -25,7 +25,8 @@ This extension brings GitHub's alert syntax to JupyterLab, allowing you to creat
 
 ## Requirements
 
-- JupyterLab >= 4.0.0
+- JupyterLab >= 4.6
+- Python >= 3.10
 
 ## Usage
 
