@@ -144,13 +144,15 @@ Behaviour that no automated test exercised
   - root-cause: 2026-10-23T07:58:14Z @kj 'should render each alert type with its title and icon' filters the title images on visible and expects one, which either image satisfies
   - log: 2026-10-23T07:58:14Z @kj added
   - log: 2026-10-23T07:58:15Z @kj closed: fixed: Galata theme icon test
-- [x] `DEF-TESTS-15-SETTINGS-DIR` **Test server settings isolation checked only by hand** - MINOR; the user_settings_dir line in ui-tests/jupyter_server_test_config.py had no repository test; its criterion was closed on a hand-run REST PUT; fix: Galata test reading userSettingsDir from the page config; `ui-tests/tests/settings-isolation.spec.ts`
-  - evidence: Galata "should keep the test server settings in its own temporary folder" passes, Galata 7 of 7 passed (logs/fix-r1-galata.log); with the user_settings_dir line removed it fails, received "/home/lab/.jupyter/lab/user-settings" (logs/fix-r1-r1-4-mutation.log)
+- [-] `DEF-TESTS-15-SETTINGS-DIR` **Test server settings isolation checked only by hand** - MINOR; the user_settings_dir line in ui-tests/jupyter_server_test_config.py had no repository test; its criterion was closed on a hand-run REST PUT; fix: none; the user_settings_dir line stays and is checked by hand under ACC-GALATA-20-SETTINGS-DIR
   - repro: search ui-tests/tests for userSettingsDir or user_settings_dir before the fix; no match
-  - test-tags: E2E
+  - test-tags: MANUAL
   - root-cause: 2026-10-23T07:58:15Z @kj the user_settings_dir fix was verified with a hand-run REST PUT and no Galata test was written for it
   - log: 2026-10-23T07:58:15Z @kj added
   - log: 2026-10-23T07:58:15Z @kj closed: fixed: Galata settings folder test
+  - log: 2026-10-23T09:40:35Z @kj rejected: a one-line setting with no logic needs no automated test (ponytail rung 1); the setting stays, required by the jupyterlab-extension skill; evidence retired: Galata "should keep the test server settings in its own temporary folder" passes, Galata 7 of 7 passed (logs/fix-r1-galata.log); with the user_settings_dir line removed it fails, received "/home/lab/.jupyter/lab/user-settings" (logs/fix-r1-r1-4-mutation.log)
+  - log: 2026-10-23T09:46:38Z @kj amended text "the user_settings_dir line in ui-tests/jupyter_server_test_config.py had no repository test; its criterion was closed on a hand-run REST PUT; fix: Galata test reading userSettingsDir from the page config; `ui-tests/tests/settings-isolation.spec.ts`" -> "MINOR; the user_settings_dir line in ui-tests/jupyter_server_test_config.py had no repository test; its criterion was closed on a hand-run REST PUT; fix: none; the user_settings_dir line stays and is checked by hand under ACC-GALATA-20-SETTINGS-DIR"
+  - log: 2026-10-23T09:46:41Z @kj edited test-tags "E2E" -> "MANUAL"
 
 ## Context menus `MENU`
 
