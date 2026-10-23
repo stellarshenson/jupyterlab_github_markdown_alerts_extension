@@ -7,3 +7,6 @@ jupyterlab_github_markdown_alerts_extension
 .claude
 eslint.config.mjs
 .venv
+# pm-tools owns these trackers and ends a new category with a blank line
+docs/acc-crit*.md
+docs/defects*.md
