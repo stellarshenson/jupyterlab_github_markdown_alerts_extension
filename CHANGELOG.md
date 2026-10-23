@@ -2,6 +2,44 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## [1.0.27] - 2026-10-23
+
+### Added
+
+- Jest tests for the Markdown render wrapper: one wrap of the shared parser, the fallback to plain Markdown on a transform error, the backgrounds default and a saved false value
+- Galata integration tests for the five alert types, the backgrounds setting, fenced code, Markdown inside alerts and the title icon per theme
+- Lint and unit-test steps in the CI build job
+- The `check_links` CI job, restored with the badge URLs and YouTube links ignored
+- A `test` Python extra with `jupyterlab>=4.6,<5`, which the CI `.[test]` install expects
+- docs/acc-crit.md with 22 acceptance criteria for the shipped behaviour, all closed
+- docs/defects.md with the defects found during the upgrade, each closed with its fix or rejected with a reason
+- docs/defects.md records that a context menu stays open after a click inside an iframe, such as the HTML viewer; the cause is the Lumino Menu in JupyterLab core, not this extension
+
+### Changed
+
+- Alert backgrounds are on by default
+- A user who saved `showBackgrounds: false` keeps the plain GitHub styling
+- The extension requires JupyterLab 4.6 or later; the `@jupyterlab/*` dependencies move to ^4.6.0
+- The README Requirements list JupyterLab >= 4.6 and Python >= 3.10
+- TypeScript moves to ~5.8.3, because the Uint8Array generics in lib0 need TypeScript 5.7 or later
+- npm dependencies upgraded within their major versions
+- Updated the project Makefile to version 1.46: `make install` raises the patch version and writes it into package-lock.json too
+- Every CI job runs Python 3.13 and pins `jupyterlab>=4.6,<5`
+- The Galata test server reads its port from `JUPYTER_TEST_PORT`; ui-tests/README.md names the variable for the test run, `jlpm start` and codegen
+
+### Fixed
+
+- Galata tests no longer attach to a lab already serving on port 8888; Playwright starts and stops its own test server
+- The Galata test server keeps user settings in a temporary folder instead of writing `~/.jupyter/lab/user-settings`
+- Galata start-up no longer times out on a host whose MOTD extension opens a Welcome tab
+- Galata deletes its scratch folder after each test; the delete had failed with a send2trash permission error
+- package-lock.json is re-resolved to the package.json ranges; it had kept 25 old ranges, among them TypeScript ~5.5.4
+- Jest can import src/index.ts: four ES-module packages are added to the Jest transform list
+- Jest collects tests only under src/, so copies of spec files elsewhere in the tree no longer run
+- `jlpm run lint:check` no longer fails on workflow scripts under tmp/
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## [1.0.25] - 2026-09-08
 
 ### Changed
@@ -12,8 +50,6 @@
 - Removed setup.py and added CONTRIBUTING.md, with the README development section now pointing at it
 - Delegated the integration-test snapshot workflow to the maintainer-tools checkout action and installed only the chromium shell in the build workflow
 - Stopped tracking junit.xml and ignored the logs directory
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 1.0.21 (2026-06-23)
 
