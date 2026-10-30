@@ -1,7 +1,8 @@
 import { expect, IJupyterLabPageFixture, test } from '@jupyterlab/galata';
 import type { Locator } from '@playwright/test';
 
-const PLUGIN_ID = 'jupyterlab_github_markdown_alerts_extension:plugin';
+const PLUGIN_ID =
+  '@stellarshenson/jupyterlab-github-markdown-alerts-extension:plugin';
 
 const ALERTS = [
   { type: 'NOTE', title: 'Note', icon: 'octicon-info' },

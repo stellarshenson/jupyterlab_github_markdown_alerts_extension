@@ -13,10 +13,10 @@ import { processAlerts, postProcessAlerts } from './utils';
 export { processAlerts, postProcessAlerts } from './utils';
 
 /**
- * Initialization data for the jupyterlab_github_markdown_alerts_extension extension.
+ * Initialization data for the @stellarshenson/jupyterlab-github-markdown-alerts-extension extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyterlab_github_markdown_alerts_extension:plugin',
+  id: '@stellarshenson/jupyterlab-github-markdown-alerts-extension:plugin',
   description:
     'Jupyterlab extension to render alerts tips like they are rendered in github in markdown',
   autoStart: true,
@@ -77,7 +77,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     }
 
     console.log(
-      'JupyterLab extension jupyterlab_github_markdown_alerts_extension is activated!'
+      'JupyterLab extension @stellarshenson/jupyterlab-github-markdown-alerts-extension is activated!'
     );
   }
 };

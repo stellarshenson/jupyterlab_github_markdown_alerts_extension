@@ -12,5 +12,5 @@ except ImportError:
 def _jupyter_labextension_paths():
     return [{
         "src": "labextension",
-        "dest": "jupyterlab_github_markdown_alerts_extension"
+        "dest": "@stellarshenson/jupyterlab-github-markdown-alerts-extension"
     }]

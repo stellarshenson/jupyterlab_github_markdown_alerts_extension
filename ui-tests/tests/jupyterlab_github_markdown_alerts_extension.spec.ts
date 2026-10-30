@@ -19,7 +19,7 @@ test('should emit an activation console message', async ({ page }) => {
     logs.filter(
       s =>
         s ===
-        'JupyterLab extension jupyterlab_github_markdown_alerts_extension is activated!'
+        'JupyterLab extension @stellarshenson/jupyterlab-github-markdown-alerts-extension is activated!'
     )
   ).toHaveLength(1);
 });

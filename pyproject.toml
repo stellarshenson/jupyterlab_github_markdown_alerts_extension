@@ -46,8 +46,8 @@ artifacts = ["jupyterlab_github_markdown_alerts_extension/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupyterlab_github_markdown_alerts_extension/labextension" = "share/jupyter/labextensions/jupyterlab_github_markdown_alerts_extension"
-"install.json" = "share/jupyter/labextensions/jupyterlab_github_markdown_alerts_extension/install.json"
+"jupyterlab_github_markdown_alerts_extension/labextension" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-github-markdown-alerts-extension"
+"install.json" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-github-markdown-alerts-extension/install.json"
 
 [tool.hatch.build.hooks.version]
 path = "jupyterlab_github_markdown_alerts_extension/_version.py"
