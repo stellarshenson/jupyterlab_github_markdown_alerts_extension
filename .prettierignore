@@ -10,3 +10,4 @@ eslint.config.mjs
 # pm-tools owns these trackers and ends a new category with a blank line
 docs/acc-crit*.md
 docs/defects*.md
+.agents
