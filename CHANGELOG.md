@@ -2,6 +2,13 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## [1.0.32] - 2026-10-31
+
+### Changed
+
+- Name the scoped npm package in the agent rules
+- Apply the template files and packages the upgrade left out
+
 ## [1.0.30] - 2026-10-31
 
 ### Changed
