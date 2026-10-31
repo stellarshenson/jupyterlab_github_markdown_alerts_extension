@@ -30,7 +30,7 @@ jobs:
         run: |
           set -eux
           jlpm
-          python -m pip install .[test]
+          python -m pip install .
 
       - uses: jupyterlab/maintainer-tools/.github/actions/update-snapshots@v1
         with:
