@@ -49,7 +49,7 @@ This file extends workspace-level configuration with project-specific rules.
 **Naming Conventions**:
 
 - Python package: `jupyterlab_github_markdown_alerts_extension` (underscores)
-- NPM package: `jupyterlab_github_markdown_alerts_extension` (underscores, matching Python)
+- NPM package: `@stellarshenson/jupyterlab-github-markdown-alerts-extension`
 - CSS classes: kebab-case with `jp-` prefix for JupyterLab conventions
 - TypeScript: PascalCase for interfaces (must start with `I`), camelCase for functions
 
