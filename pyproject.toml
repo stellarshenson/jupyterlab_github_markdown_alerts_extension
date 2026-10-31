@@ -30,8 +30,7 @@ test = [
 ]
 dev = [
     "jupyterlab_github_markdown_alerts_extension[test]",
-    "jupyter-builder>=1.2,<2",
-    "jupyterlab>=4"
+    "jupyter-builder>=1.2,<2"
 ]
 
 [tool.hatch.version]
