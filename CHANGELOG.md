@@ -2,6 +2,12 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## [1.0.35] - 2026-11-13
+
+### Fixed
+
+- Keep the line after an empty alert marker and accept lower-case markers
+
 ## [1.0.33] - 2026-10-31
 
 ### Changed
