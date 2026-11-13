@@ -109,21 +109,24 @@ export function processAlerts(text: string): string {
     }
 
     const alertMatch = line.match(
-      /^>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*$/
+      /^>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*$/i
     );
 
     if (alertMatch) {
-      const alertType = alertMatch[1];
+      const alertType = alertMatch[1].toUpperCase();
       const contentLines: string[] = [];
 
-      i++;
-      while (i < lines.length && lines[i].startsWith('>')) {
-        const content = lines[i].replace(/^>\s?/, '');
+      // Look ahead with j: i moves only when an alert is emitted, so a
+      // marker with no content leaves the next line to the main loop
+      let j = i + 1;
+      while (j < lines.length && lines[j].startsWith('>')) {
+        const content = lines[j].replace(/^>\s?/, '');
         contentLines.push(content); // Keep empty lines for paragraph separation
-        i++;
+        j++;
       }
 
       if (contentLines.length > 0) {
+        i = j;
         // Use single newlines to preserve table structure
         // Empty lines in contentLines will still create paragraph breaks
         const content = contentLines.join('\n');

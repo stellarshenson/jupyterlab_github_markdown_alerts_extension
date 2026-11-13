@@ -166,3 +166,24 @@ Right-click menus in JupyterLab
   - log: 2026-10-23T08:54:06Z @kj root-cause updated "2026-10-23T08:54:00Z @kj a Lumino Menu closes only from a capture pointerdown listener on the top-level document (@lumino/widgets src/menu.ts lines 539 and 822-838); a press inside an iframe is delivered to the iframe own document" -> "a Lumino Menu closes only from a capture pointerdown listener on the top-level document (@lumino/widgets src/menu.ts lines 539 and 822-838); a press inside an iframe is delivered to the iframe's own document"
   - log: 2026-10-23T08:54:06Z @kj rejected: JupyterLab core (Lumino Menu) issue, not in this extension; reproduces with every third-party extension disabled; a fix belongs upstream in Lumino or in the iframe-based viewer
 
+## Alert rendering `RENDER`
+
+How processAlerts turns a blockquote into an alert
+
+- log: 2026-11-13T06:58:22Z @kj category created
+
+- [x] `DEF-RENDER-19-EMPTY-SKIP` **Line after an empty alert marker is dropped** - MEDIUM; a `> [!NOTE]` line with no `>` line after it removes the next source line from the render: a blank line is lost and the following paragraph joins the blockquote, a heading or text line directly after disappears
+  - evidence: jest "should keep the line after an alert marker with no content" passes; jlpm test 30 of 30 passed, Galata 6 of 6 passed (logs/fleet-build-test.log); look-ahead index j in src/utils.ts, i moves only when an alert is emitted
+  - root-cause: 2026-11-13T07:01:36Z @kj processAlerts ran i++ after the marker match and again in the fall-through push when no `>` line followed, so the next line was never pushed
+  - repro: processAlerts("> [!NOTE]\n# Heading") returns "> [!NOTE]"
+  - test-tags: UNIT
+  - log: 2026-11-13T06:58:22Z @kj added
+  - log: 2026-11-13T07:01:36Z @kj closed
+- [x] `DEF-RENDER-20-LOWER-CASE` **Lower-case alert marker not rendered** - MINOR; `> [!note]` renders as a plain blockquote showing `[!note]`; GitHub renders it as an alert, so a cell copied from a GitHub README loses its alert
+  - evidence: jest "should convert a lower-case alert marker" passes; jlpm test 30 of 30 passed, Galata 6 of 6 passed (logs/fleet-build-test.log); i flag on the marker regex, type upper-cased before the ALERT_START marker
+  - root-cause: 2026-11-13T07:01:36Z @kj marker regex in processAlerts matched upper case only
+  - repro: processAlerts("> [!note]\n> text") holds no <!--ALERT_START
+  - test-tags: UNIT
+  - log: 2026-11-13T06:58:22Z @kj added
+  - log: 2026-11-13T07:01:36Z @kj closed
+

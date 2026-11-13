@@ -165,6 +165,20 @@ code
       expect(result).not.toContain('<!--ALERT_START');
     });
 
+    it('should keep the line after an alert marker with no content', () => {
+      const input = `> [!NOTE]
+# Heading
+text`;
+      expect(processAlerts(input)).toBe(input);
+    });
+
+    it('should convert a lower-case alert marker', () => {
+      const result = processAlerts(`> [!note]
+> This is a note.`);
+      expect(result).toContain('<!--ALERT_START:NOTE-->');
+      expect(result).toContain('<!--ALERT_END:NOTE-->');
+    });
+
     it('should handle regular blockquotes (not alerts)', () => {
       const input = `> This is a regular blockquote.
 > It should not be converted.`;

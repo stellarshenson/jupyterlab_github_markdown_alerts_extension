@@ -52,6 +52,12 @@ How a `> [!TYPE]` blockquote in a Markdown cell renders
   - test-tags: UNIT
   - log: 2026-10-23T07:14:23Z @kj added
   - log: 2026-10-23T07:14:23Z @kj closed: verified
+- [x] `ACC-RENDER-23-ANY-CASE` **Marker in any letter case** - LOW; `> [!note]` and `> [!Note]` render the same alert as `> [!NOTE]`, as on GitHub
+  - evidence: jest "should convert a lower-case alert marker" passes; jlpm test 30 of 30 passed, Galata 6 of 6 passed (logs/fleet-build-test.log)
+  - test: processAlerts on a `> [!note]` block; assert `<!--ALERT_START:NOTE-->`
+  - test-tags: UNIT
+  - log: 2026-11-13T07:01:36Z @kj added
+  - log: 2026-11-13T07:01:36Z @kj closed
 
 ## Theme `THEME`
 
